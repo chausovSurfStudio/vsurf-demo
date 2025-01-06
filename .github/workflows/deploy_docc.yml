@@ -26,6 +26,10 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Init
+        run: |
+          make init
+
       - name: Build DocC
         run: |
           xcodebuild docbuild -scheme Demo \
