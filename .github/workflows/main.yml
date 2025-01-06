@@ -1,0 +1,30 @@
+name: build
+
+# Controls when the action will run. 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+    types: [ opened, edited, synchronize, reopened ]
+
+jobs:
+  build:
+    name: Build and Test project
+    runs-on: macOS-14
+    steps:
+    - uses: actions/checkout@v3
+    - name: Init
+      run: |
+        make init
+    - name: Force xcode 15.4
+      run: |
+        sudo xcode-select -switch /Applications/Xcode_15.4.app
+    - name: Build
+      run: |
+        make build
+    - name: Test
+      run: |
+        make test
