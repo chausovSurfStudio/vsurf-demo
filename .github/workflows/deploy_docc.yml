@@ -32,7 +32,7 @@ jobs:
 
       - name: Build DocC
         run: |
-          xcodebuild docbuild -scheme Demo \
+          xcodebuild docbuild -skipMacroValidation -scheme Demo \
             -derivedDataPath docc \
             -destination 'generic/platform=iOS';
 
