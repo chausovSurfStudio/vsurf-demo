@@ -34,7 +34,8 @@ jobs:
         run: |
           xcodebuild docbuild -skipMacroValidation -scheme Demo \
             -derivedDataPath docc \
-            -destination 'generic/platform=iOS';
+            -destination 'generic/platform=iOS' \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO;
 
           $(xcrun --find docc) process-archive \
             transform-for-static-hosting ./docc/Build/Products/Debug-iphoneos/Demo.doccarchive \
