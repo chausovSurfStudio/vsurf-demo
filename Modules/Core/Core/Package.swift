@@ -24,7 +24,7 @@ let package = Package(
             revision: "0.0.5"
         ),
         .package(
-            url: "git@github.com:surfstudio/SwiftMacros.git",
+            url: "https://github.com/surfstudio/SwiftMacros",
             revision: "0.0.3"
         ),
         .package(
